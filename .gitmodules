@@ -1,0 +1,15 @@
+[submodule "wp-content/plugins/WP-CustomPost"]
+	path = wp-content/plugins/WP-CustomPost
+	url = https://github.com/EaseCloud/WP-CustomPost.git
+[submodule "wp-content/plugins/WP-Wechat"]
+	path = wp-content/plugins/WP-Wechat
+	url = https://github.com/EaseCloud/WP-Wechat.git
+[submodule "wp-content/plugins/WP-MLang"]
+	path = wp-content/plugins/WP-MLang
+	url = https://github.com/EaseCloud/WP-MLang.git
+[submodule "wp-content/plugins/WP-AjaxApi"]
+	path = wp-content/plugins/WP-AjaxApi
+	url = https://github.com/EaseCloud/WP-AjaxApi.git
+[submodule "wp-content/themes/mytheme/lib/less-template"]
+	path = wp-content/themes/mytheme/lib/less-template
+	url = https://github.com/EaseCloud/less-template.git
