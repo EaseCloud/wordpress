@@ -3,8 +3,8 @@ Contributors: GamerZ
 Donate link: http://lesterchan.net/site/donation/  
 Tags: views, hits, counter, postviews  
 Requires at least: 3.0  
-Tested up to: 4.4  
-Stable tag: 1.72  
+Tested up to: 4.5  
+Stable tag: 1.73  
 
 Enables you to display how many times a post/page had been viewed.
 
@@ -26,6 +26,9 @@ Enables you to display how many times a post/page had been viewed.
 I spent most of my free time creating, updating, maintaining and supporting these plugins, if you really love my plugins and could spare me a couple of bucks, I will really appreciate it. If not feel free to use it without any obligations.
 
 == Changelog ==
+= Version 1.73 =
+* FIXED: In preview mode, don't count views
+
 = Version 1.72 =
 * NEW: Add %POST_THUMBNAIL% to template variables
 
@@ -263,3 +266,25 @@ N/A
 * You can use: `<?php query_posts( array( 'meta_key' => 'views', 'orderby' => 'meta_value_num', 'order' => 'DESC' ) ); ?>`
 * Or pass in the variables to the URL: `http://yoursite.com/?v_sortby=views&v_orderby=desc`
 * You can replace DESC  with ASC if you want the least viewed posts.
+
+= To Display Updating View Count With LiteSpeed Cache =
+1. Use: `<div id="postviews_lscwp"></div>` to replace `<?php if(function_exists('the_views')) { the_views(); } ?>`.
+  * NOTE: The id can be changed, but the div id and the ajax function must match.
+2. Replace the ajax query in `wp-content/plugins/wp-postviews/postviews-cache.js` with
+
+    `
+    jQuery.ajax({
+        type:"GET",
+        url:viewsCacheL10n.admin_ajax_url,
+        data:"postviews_id="+viewsCacheL10n.post_id+"&action=postviews",
+        cache:!1,
+        success:function(data) {
+            if(data) {
+                jQuery('#postviews_lscwp').html(data+' views');
+            }
+       }
+    });
+    `
+
+3. Purge the cache to use the updated pages.
+
