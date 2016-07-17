@@ -13,3 +13,6 @@
 [submodule "wp-content/themes/mytheme/lib/less-template"]
 	path = wp-content/themes/mytheme/lib/less-template
 	url = https://github.com/EaseCloud/less-template.git
+[submodule "wp-content/plugins/wp-acf"]
+	path = wp-content/plugins/wp-acf
+	url = https://github.com/fish-ball/wp-acf.git
